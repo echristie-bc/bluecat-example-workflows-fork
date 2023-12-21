@@ -1,0 +1,33 @@
+name: Pylint
+run-name: ${{ github.actor }} is running Pylint check on code
+on:
+    push:
+        branches: ['*']
+    pull_request:
+        types: [opened, reopened]
+        branches: ['*']
+
+permissions: read-all
+jobs:
+    test:
+        name: Running Pylint
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # tag=v4.1.0
+
+            - name: Set up Python 3.9
+              uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c #tag=v5.0.0
+              with:
+                python-version: 3.9
+
+            - name: Set up virtual environment
+              run: | 
+                python3.9 -m venv .venv
+                source .venv/bin/activate
+                pip3 install --require-hashes -r requirements/dev-base.txt
+
+            - name: Run Pylint analysis
+              run: |
+                source .venv/bin/activate
+                tox -e pylint

@@ -1,0 +1,2 @@
+tox==4.11.3
+tomli==2.0.1  # tox dependency, pin version to avoid error

@@ -24,12 +24,13 @@
 def initialize():
     """Handle the `initialize` event."""
     # NOTE: Load the modules that add routes to the blueprint instance.
-    # pylint: disable=unused-import
+    # pylint: disable=unused-import, import-outside-toplevel
     from . import routes
 
 
 def attach(application):
     """Attach handlers (and/or configure) the web application."""
+    # pylint: disable=import-outside-toplevel
     from .base import bp
 
     application.register_blueprint(bp)
