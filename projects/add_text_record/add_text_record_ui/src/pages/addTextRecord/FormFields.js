@@ -137,8 +137,16 @@ export const FormFields = ({ initialFormData }) => {
                 required={true}
             />
 
-            <FormTextInput label='Name' name='name' disabled={checkAllFieldsHasValue()} />
-            <FormTextInput label='Text' name='text' disabled={checkAllFieldsHasValue()} />
+            <FormTextInput
+                label='Name'
+                name='name'
+                disabled={checkAllFieldsHasValue()}
+            />
+            <FormTextInput
+                label='Text'
+                name='text'
+                disabled={checkAllFieldsHasValue()}
+            />
         </div>
     );
 };

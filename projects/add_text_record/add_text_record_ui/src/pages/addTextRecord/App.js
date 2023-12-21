@@ -74,7 +74,9 @@ const Content = () => {
 
     const extraValidation = (errors, { configuration, view, zone }) => ({
         ...errors,
-        configuration: validateNotEmpty('Please select a configuration.')(configuration?.name),
+        configuration: validateNotEmpty('Please select a configuration.')(
+            configuration?.name,
+        ),
         view: validateNotEmpty('Please select a view.')(view?.name),
         zone: validateNotEmpty('Please select a zone.')(zone?.name),
     });
@@ -93,13 +95,12 @@ const Content = () => {
                 toggleTriggerLoad();
             })
             .catch((error) => {
-                const { page: pageErrors, fields: fieldsErrors } = processErrorMessages(
-                    error,
-                    Array.from(BE_FE.keys()),
-                    true,
-                );
+                const { page: pageErrors, fields: fieldsErrors } =
+                    processErrorMessages(error, Array.from(BE_FE.keys()), true);
                 setErrors(replaceKeys(fieldsErrors, BE_FE));
-                addMessages(pageErrors.map((text) => ({ type: 'error', text: text })));
+                addMessages(
+                    pageErrors.map((text) => ({ type: 'error', text: text })),
+                );
             })
             .finally(() => setBusy(false));
     };

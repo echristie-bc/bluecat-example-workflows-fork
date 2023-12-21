@@ -21,7 +21,12 @@ SOFTWARE.
 */
 
 import { useCallback } from 'react';
-import { ComboBox, FieldError, LabelLine, renderSuggestion } from '@bluecateng/pelagos';
+import {
+    ComboBox,
+    FieldError,
+    LabelLine,
+    renderSuggestion,
+} from '@bluecateng/pelagos';
 import { useFormField } from '@bluecateng/auto-forms';
 import useObjectSuggestions from '../hooks/useObjectSuggestions';
 import './FormComboBoxField.less';
@@ -37,8 +42,14 @@ const FormComboBoxField = ({
     ...props
 }) => {
     const labelId = `${id}-label`;
-    const { value, error, extra, setValue, setError, setExtra } = useFormField(name);
-    const handleGetSuggestions = useObjectSuggestions(values, setError, noMatchText, !extra);
+    const { value, error, extra, setValue, setError, setExtra } =
+        useFormField(name);
+    const handleGetSuggestions = useObjectSuggestions(
+        values,
+        setError,
+        noMatchText,
+        !extra,
+    );
     const handleChange = useCallback(
         (object) => (setValue(object), setError(null), setExtra(null)),
         [setValue, setError, setExtra],
@@ -49,7 +60,12 @@ const FormComboBoxField = ({
     );
     return (
         <div className={`FormComboBoxField${className ? ` ${className}` : ''}`}>
-            <LabelLine id={labelId} text={label} required={required} error={!!error} />
+            <LabelLine
+                id={labelId}
+                text={label}
+                required={required}
+                error={!!error}
+            />
             <ComboBox
                 {...props}
                 id={id}

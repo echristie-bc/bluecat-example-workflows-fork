@@ -1,0 +1,13 @@
+# Folders
+.venv/
+node_modules/
+logs/
+# Generated content
+workspace/workflows/*/fonts/
+workspace/workflows/*/html/
+workspace/workflows/*/img/
+workspace/workflows/*/js/
+# Files
+.prettierrc
+package.json
+package-lock.json

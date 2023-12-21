@@ -1,0 +1,25 @@
+{
+    "name": "@bluecat/bluecat-example-workflows",
+    "version": "0.0.0-dev",
+    "description": "Gateway example workflows",
+    "usage": "dev",
+    "scripts": {
+        "prettier-check": "prettier --check --config ./.prettierrc . --ignore-path ./.prettierignore",
+        "reformat": "prettier --write --config ./.prettierrc . --ignore-path ./.prettierignore"
+    },
+    "files": [
+        "project",
+        "workspace"
+    ],
+    "sideEffects": [
+        "*.less"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:bluecatlabs/bluecat-example-workflows.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "prettier": "^2.5.1"
+    }
+}
