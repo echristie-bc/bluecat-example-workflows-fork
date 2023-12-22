@@ -28,7 +28,10 @@ from bluecat.gateway.decorators import (
     page_exc_handler,
     require_permission,
 )
-from bluecat.gateway.errors import BadRequestError, FieldError  # pylint: disable=import-error
+from bluecat.gateway.errors import (
+    BadRequestError,
+    FieldError,
+)  # pylint: disable=import-error
 from bluecat.util import no_cache  # pylint: disable=import-error
 
 from .base import bp

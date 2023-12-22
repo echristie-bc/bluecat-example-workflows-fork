@@ -1,3 +1,4 @@
 -r dev-base.txt
 -r run.txt
--r pylint.txt
+-r lint/pylint.txt
+-r lint/black.txt
