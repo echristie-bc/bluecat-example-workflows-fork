@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-len
 /*
 Copyright 2023 BlueCat Networks Inc.
 
@@ -35,16 +36,17 @@ module.exports = {
         'ecmaVersion': 12,
         'sourceType': 'module',
     },
+    'ignorePatterns': ['workspace/workflows/*/js/'],
     'root': true,
     'rules': {
         // enable additional rules
         'indent': ['off'], // prettier
-        'max-len': ['off'], // prettier
         'no-tabs': ['off'], // prettier
         'brace-style': ['off'], // prettier
         'quotes': ['off'], // prettier
         'spaced-comment': ['off'], // prettier
         'no-trailing-spaces': ['off'], // prettier
+        'max-len': ['error', { 'code': 80 }],
         'camelcase': ['error'],
         'linebreak-style': ['error', 'unix'],
         'semi': ['error', 'always'],

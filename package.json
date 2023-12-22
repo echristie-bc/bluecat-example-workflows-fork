@@ -4,6 +4,7 @@
     "description": "Gateway example workflows",
     "usage": "dev",
     "scripts": {
+        "eslint-ci": "eslint .",
         "prettier-check": "prettier --check --config ./.prettierrc . --ignore-path ./.prettierignore",
         "reformat": "prettier --write --config ./.prettierrc . --ignore-path ./.prettierignore"
     },
@@ -20,6 +21,8 @@
     },
     "license": "MIT",
     "devDependencies": {
+        "eslint": "^8.36.0",
+        "eslint-plugin-react": "^7.30.0",
         "prettier": "^2.5.1"
     }
 }
