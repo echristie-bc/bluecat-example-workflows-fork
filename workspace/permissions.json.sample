@@ -3,5 +3,10 @@
         "add_text_record": [
             "all"
         ]
+    },
+    "get_object_details": {
+        "get_object_details": [
+            "all"
+        ]
     }
 }

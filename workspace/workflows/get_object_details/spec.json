@@ -1,0 +1,9 @@
+{
+    "pages": [
+        {
+            "title": "Get object details",
+            "url": "/get_object_details",
+            "permission": "get_object_details"
+        }
+    ]
+}

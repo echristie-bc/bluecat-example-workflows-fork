@@ -18,46 +18,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-BASE_DIR := $(shell pwd)
-export BASE_DIR
-
-run-prep:
-	mkdir -p logs
-	-[ ! -f workspace/config.json ] \
-		&& cp workspace/config.json.sample workspace/config.json
-	-[ ! -f workspace/permissions.json ] \
-		&& cp workspace/permissions.json.sample workspace/permissions.json
-
-run: run-prep
-	docker run --rm -d \
-		-p 8001:8000 \
-		-p 44301:44300 \
-		-v "$(BASE_DIR)/workspace":/bluecat_gateway \
-		-v "$(BASE_DIR)/logs":/logs \
-	 	-u "$(shell id -u)" \
-		--name example-workflows \
-		quay.io/bluecat/gateway:23.2.2
-
-stop:
-	docker stop example-workflows
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+parentdir := $(shell dirname $(mkfile_path))
 
 ui-req:
-	make -f projects/add_text_record/Makefile ui-req
-	make -f projects/get_object_details/Makefile ui-req
+	cd $(parentdir)/get_object_details_ui && npm install
 
 ui-build:
-	make -f projects/add_text_record/Makefile ui-build
-	make -f projects/get_object_details/Makefile ui-build
-
-image-build:
-	docker build --tag quay.io/bluecat/gateway_example_workflows_ci:23.2.0 .
-
-build: ui-build image-build
+	cd $(parentdir)/get_object_details_ui \
+		&& export NODE_ENV=production \
+		&& npm run build
 
 clean:
-	make -f projects/add_text_record/Makefile clean
-	make -f projects/get_objects_details/Makefile clean
+	rm -rf \
+		$(parentdir)/../../workspace/workflows/get_object_details/fonts \
+		$(parentdir)/../../workspace/workflows/get_object_details/html \
+		$(parentdir)/../../workspace/workflows/get_object_details/img \
+		$(parentdir)/../../workspace/workflows/get_object_details/js
 
-purge:
-	make -f projects/add_text_record/Makefile purge
-	make -f projects/add_text_record/Makefile purge
+purge: clean
+	rm -rf $(parentdir)/get_object_details_ui/node_modules
