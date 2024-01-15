@@ -35,19 +35,19 @@ msgstr ""
 
 #: 684d
 msgid "Enter object ID"
-msgstr "ÉÉntéér óóbjééct ÍÍD"
+msgstr "ÉÉntéér ôôbjééççt ÎÎD"
 
 #: 5e48
 msgid "Get object"
-msgstr "Géét óóbjééct"
+msgstr "Géét ôôbjééççt"
 
 #: e0ec
 msgid "Get object name example"
-msgstr "Géét óóbjééct nááméé ééxáámpléé"
+msgstr "Géét ôôbjééççt nââméé ééxââmpléé"
 
 #: 709a
 msgid "Name"
-msgstr "Nááméé"
+msgstr "Nââméé"
 
 #: def7
 msgid "Object ID"
@@ -55,7 +55,7 @@ msgstr "Objééct ÍÍD"
 
 #: 5248
 msgid "The object does not exist for the given ID."
-msgstr "Théé óóbjééct dóóéés nóót ééxííst fóór théé gíívéén ÍÍD."
+msgstr "Théé ôôbjééççt dôôéés nôôt ééxîîst fôôr théé gîîvéén ÎÎD."
 
 #: 3deb
 msgid "Type"
@@ -63,12 +63,12 @@ msgstr "Typéé"
 
 #: aff9
 msgid "Value cannot be empty."
-msgstr "Váálúúéé cáánnóót béé éémpty."
+msgstr "Vââlùùéé ççâânnôôt béé éémpty."
 
 #: b361
 msgid "Value should not be less than 0."
-msgstr "Váálúúéé shóóúúld nóót béé lééss tháán 0."
+msgstr "Vââlùùéé shôôùùld nôôt béé lééss thâân 0."
 
 #: 585d
 msgid "Workflow to get name and type for the given object ID."
-msgstr "Wóórkflóów tóó géét nááméé áánd typéé fóór théé gíívéén óóbjééct ÍÍD."
+msgstr "Wôôrkflôôw tôô géét nââméé âând typéé fôôr théé gîîvéén ôôbjééççt ÎÎD."
