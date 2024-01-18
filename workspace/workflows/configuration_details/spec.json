@@ -1,0 +1,9 @@
+{
+    "pages": [
+        {
+            "title": "Configuration details",
+            "url": "/configuration_details",
+            "permission": "configuration_details"
+        }
+    ]
+}

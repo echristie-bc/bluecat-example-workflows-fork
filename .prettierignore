@@ -1,5 +1,6 @@
 # Folders
 .venv/
+.tox/
 node_modules/
 logs/
 # Generated content

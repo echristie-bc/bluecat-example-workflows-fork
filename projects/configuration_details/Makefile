@@ -1,4 +1,4 @@
-# Copyright 2023 BlueCat Networks Inc.
+# Copyright 2024 BlueCat Networks Inc.
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -18,32 +18,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# Byte-compiled / optimized / DLL files
-__pycache__/
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+parentdir := $(shell dirname $(mkfile_path))
 
-.DS_Store
+ui-req:
+	cd $(parentdir)/configuration_details_ui && npm install
 
-*.log
-.idea
-.venv
-venv
+ui-build:
+	cd $(parentdir)/configuration_details_ui \
+		&& export NODE_ENV=production \
+		&& npm run build
 
-# Operational logs.
-logs/*
+clean:
+	rm -rf \
+		$(parentdir)/../../workspace/workflows/configuration_details/fonts \
+		$(parentdir)/../../workspace/workflows/configuration_details/html \
+		$(parentdir)/../../workspace/workflows/configuration_details/img \
+		$(parentdir)/../../workspace/workflows/configuration_details/js
 
-# The Node.js modules for any of the workflows.
-node_modules/
-
-# Custom configuration.
-workspace/config.py
-workspace/config.json
-workspace/permissions.json
-
-# Operational state of workflow "Availability groups".
-workspace/configuration/ag/state.json
-
-# Content generated from sources.
-workspace/workflows/*/fonts/
-workspace/workflows/*/html/
-workspace/workflows/*/img/
-workspace/workflows/*/js/
+purge: clean
+	rm -rf $(parentdir)/configuration_details_ui/node_modules

@@ -1,4 +1,4 @@
-# Copyright 2023 BlueCat Networks Inc.
+# Copyright 2024 BlueCat Networks Inc.
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -18,32 +18,18 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# Byte-compiled / optimized / DLL files
-__pycache__/
+"""Event handlers of workflow `configuration_details`."""
 
-.DS_Store
 
-*.log
-.idea
-.venv
-venv
+def initialize():
+    """Handle the `initialize` event."""
+    # NOTE: Load the modules that add routes to the blueprint instance.
+    # pylint: disable=unused-import
+    from . import routes
 
-# Operational logs.
-logs/*
 
-# The Node.js modules for any of the workflows.
-node_modules/
+def attach(application):
+    """Attach handlers (and/or configure) the web application."""
+    from .base import bp
 
-# Custom configuration.
-workspace/config.py
-workspace/config.json
-workspace/permissions.json
-
-# Operational state of workflow "Availability groups".
-workspace/configuration/ag/state.json
-
-# Content generated from sources.
-workspace/workflows/*/fonts/
-workspace/workflows/*/html/
-workspace/workflows/*/img/
-workspace/workflows/*/js/
+    application.register_blueprint(bp)

@@ -1,4 +1,4 @@
-# Copyright 2023 BlueCat Networks Inc.
+# Copyright 2024 BlueCat Networks Inc.
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -17,33 +17,4 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-
-.DS_Store
-
-*.log
-.idea
-.venv
-venv
-
-# Operational logs.
-logs/*
-
-# The Node.js modules for any of the workflows.
-node_modules/
-
-# Custom configuration.
-workspace/config.py
-workspace/config.json
-workspace/permissions.json
-
-# Operational state of workflow "Availability groups".
-workspace/configuration/ag/state.json
-
-# Content generated from sources.
-workspace/workflows/*/fonts/
-workspace/workflows/*/html/
-workspace/workflows/*/img/
-workspace/workflows/*/js/
+"""Package for workflow "configuration_details"."""

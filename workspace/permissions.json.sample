@@ -8,5 +8,10 @@
         "get_object_details": [
             "all"
         ]
+    },
+    "configuration_details": {
+        "configuration_details": [
+            "all"
+        ]
     }
 }

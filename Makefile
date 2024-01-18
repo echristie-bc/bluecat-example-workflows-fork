@@ -1,4 +1,4 @@
-# Copyright 2023 BlueCat Networks Inc.
+# Copyright 2024 BlueCat Networks Inc.
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -44,10 +44,12 @@ stop:
 ui-req:
 	make -f projects/add_text_record/Makefile ui-req
 	make -f projects/get_object_details/Makefile ui-req
+	make -f projects/configuration_details/Makefile ui-req
 
 ui-build:
 	make -f projects/add_text_record/Makefile ui-build
 	make -f projects/get_object_details/Makefile ui-build
+	make -f projects/configuration_details/Makefile ui-build
 
 image-build:
 	docker build --tag quay.io/bluecat/gateway_example_workflows_ci:23.2.0 .
@@ -56,8 +58,10 @@ build: ui-build image-build
 
 clean:
 	make -f projects/add_text_record/Makefile clean
-	make -f projects/get_objects_details/Makefile clean
+	make -f projects/get_object_details/Makefile clean
+	make -f projects/configuration_details/Makefile clean
 
 purge:
 	make -f projects/add_text_record/Makefile purge
-	make -f projects/add_text_record/Makefile purge
+	make -f projects/get_object_details/Makefile purge
+	make -f projects/configuration_details/Makefile purge
