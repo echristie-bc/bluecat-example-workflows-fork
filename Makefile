@@ -45,11 +45,14 @@ ui-req:
 	make -f projects/add_text_record/Makefile ui-req
 	make -f projects/get_object_details/Makefile ui-req
 	make -f projects/configuration_details/Makefile ui-req
+	make -f projects/manage_text_record/Makefile ui-req
 
 ui-build:
 	make -f projects/add_text_record/Makefile ui-build
 	make -f projects/get_object_details/Makefile ui-build
 	make -f projects/configuration_details/Makefile ui-build
+	make -f projects/manage_text_record/Makefile ui-build
+
 
 image-build:
 	docker build --tag quay.io/bluecat/gateway_example_workflows_ci:23.2.0 .
@@ -60,6 +63,7 @@ clean:
 	make -f projects/add_text_record/Makefile clean
 	make -f projects/get_object_details/Makefile clean
 	make -f projects/configuration_details/Makefile clean
+	make -f projects/manage_text_record/Makefile clean
 
 purge:
 	make -f projects/add_text_record/Makefile purge

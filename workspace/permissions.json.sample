@@ -14,4 +14,7 @@
             "all"
         ]
     }
+    "Manage text record": {
+        "update_text_record": ["all"]
+    }
 }
