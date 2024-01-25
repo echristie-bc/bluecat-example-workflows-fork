@@ -13,8 +13,8 @@
         "configuration_details": [
             "all"
         ]
-    }
-    "Manage text record": {
+    },
+    "update_text_record" : {
         "update_text_record": ["all"]
     }
 }
