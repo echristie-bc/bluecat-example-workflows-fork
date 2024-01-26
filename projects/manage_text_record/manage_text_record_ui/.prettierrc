@@ -17,3 +17,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+arrowParens: always
+bracketSameLine: true
+bracketSpacing: true
+printWidth: 100
+quoteProps: preserve
+semi: true
+singleQuote: true
+jsxSingleQuote: true
+tabWidth: 4
+trailingComma: all
+useTabs: false

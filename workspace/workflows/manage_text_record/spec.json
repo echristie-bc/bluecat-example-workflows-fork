@@ -1,0 +1,27 @@
+{
+    "pages": [
+        {
+            "title": "Update text record",
+            "url": "/manage_text_record/update_text_record",
+            "nav_pos": "sys",
+            "permission": "update_text_record",
+            "nav_path": ["Manage text record"],
+            "nav_rank": 10
+        },
+        {
+            "title": "Delete text record",
+            "url": "/manage_text_record/delete_text_record",
+            "nav_pos": "sys",
+            "permission": "delete_text_record",
+            "nav_path": ["Manage text record"],
+            "nav_rank": 20
+        }
+    ],
+    "nav_groups": [
+        {
+            "nav_path": ["Manage text record"],
+            "nav_pos": "sys",
+            "nav_rank": -800
+        }
+    ]
+}

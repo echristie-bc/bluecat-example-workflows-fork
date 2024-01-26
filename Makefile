@@ -69,3 +69,4 @@ purge:
 	make -f projects/add_text_record/Makefile purge
 	make -f projects/get_object_details/Makefile purge
 	make -f projects/configuration_details/Makefile purge
+	make -f projects/manage_text_record/Makefile purge

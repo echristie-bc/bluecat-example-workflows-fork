@@ -22,19 +22,19 @@ mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 parentdir := $(shell dirname $(mkfile_path))
 
 ui-req:
-	cd $(parentdir)/update_text_record_ui && npm install
+	cd $(parentdir)/manage_text_record_ui && npm install
 
 ui-build:
-	cd $(parentdir)/update_text_record_ui \
+	cd $(parentdir)/manage_text_record_ui \
 	&& export NODE_ENV=production \
 	&& npm run build
 
 clean:
 	rm -rf \
-		$(parentdir)/../../workspace/workflows/Manage text record/update_text_record/fonts \
-		$(parentdir)/../../workspace/workflows/Manage text record/update_text_record/html \
-		$(parentdir)/../../workspace/workflows/Manage text record/update_text_record/img \
-		$(parentdir)/../../workspace/workflows/Manage text record/update_text_record/js
+		$(parentdir)/../../workspace/workflows/manage_text_record/fonts \
+		$(parentdir)/../../workspace/workflows/manage_text_record/html \
+		$(parentdir)/../../workspace/workflows/manage_text_record/img \
+		$(parentdir)/../../workspace/workflows/manage_text_record/js
 
 purge: clean
 	rm -rf $(parentdir)/update_text_record_ui/node_modules

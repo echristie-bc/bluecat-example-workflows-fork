@@ -21,4 +21,4 @@
 """Base items of workflow "update_text_record"."""
 from flask import Blueprint
 
-bp = Blueprint("update_text_record", __name__, url_prefix="/update_text_record")
+bp = Blueprint("manage_text_record", __name__, url_prefix="/manage_text_record")

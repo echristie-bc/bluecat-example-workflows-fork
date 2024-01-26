@@ -14,7 +14,12 @@
             "all"
         ]
     },
-    "update_text_record" : {
-        "update_text_record": ["all"]
+    "manage_text_record": {
+        "update_text_record": [
+            "all"
+        ],
+        "delete_text_record": [
+            "all"
+        ]
     }
 }

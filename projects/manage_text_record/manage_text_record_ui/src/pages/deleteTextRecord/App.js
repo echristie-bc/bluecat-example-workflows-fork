@@ -22,8 +22,8 @@ SOFTWARE.
 
 import { useEffect, useState } from 'react';
 import {
+    doDelete,
     doGet,
-    doPost,
     FormButtons,
     FormLayout,
     processErrorMessages,
@@ -44,22 +44,17 @@ const Content = () => {
     const [triggerLoad, toggleTriggerLoad] = useTrigger();
     const [initialFormData, setInitialFormData] = useState(null);
     const rules = {};
-    const extraValidation = (
-        errors,
-        { configuration, view, zone, recordName, recordText },
-    ) => ({
+    const extraValidation = (errors, { configuration, view, zone }) => ({
         ...errors,
         configuration: validateNotEmpty('Please select a configuration.')(
             configuration?.name,
         ),
         view: validateNotEmpty('Please select a view.')(view?.name),
         zone: validateNotEmpty('Please select a zone.')(zone?.name),
-        recordName: validateNotEmpty('Record must have a name.')(recordName),
-        recordText: validateNotEmpty('Record must have text.')(recordText),
     });
 
     useEffect(() => {
-        doGet('/update_text_record/configurations')
+        doGet('/manage_text_record/delete_text_record/configurations')
             .then((data) => {
                 setInitialFormData({
                     configurations: data.configurations,
@@ -69,8 +64,6 @@ const Content = () => {
                     text: '',
                     records: [],
                     selectedRecord: {},
-                    selectedRecordName: '',
-                    selectedRecordText: '',
                 });
             })
             .catch((error) => {
@@ -79,22 +72,12 @@ const Content = () => {
     }, [triggerLoad]);
 
     const handleSubmit = (values) => {
-        if (values['recordName'] && values['recordText']) {
-            const payload = new FormData();
-            const data = {
-                zoneName: values['zone']['name'],
-                record: values['record'],
-                recordID: values['record']['id'],
-                oldName: values['record']['name'],
-                newName: values['recordName'],
-                oldText: values['record']['text'],
-                newText: values['recordText'],
-            };
-            for (const key in data) {
-                payload.append(key, data[key]);
-            }
+        if (values['record'] !== {} || values['record'] !== null) {
             setBusy(true);
-            doPost('/update_text_record/update', payload)
+            doDelete(
+                '/manage_text_record/delete_text_record/delete/' +
+                    values['record']['id'],
+            )
                 .then((data) => {
                     addMessages([{ 'type': 'success', 'text': data.message }]);
                     toggleTriggerLoad();
@@ -125,9 +108,9 @@ const Content = () => {
                         initialValues={initialFormData}
                         extraValidation={extraValidation}
                         onSubmit={handleSubmit}
-                        className='updateTextRecord'>
+                        className='DeleteTextRecord'>
                         <FormFields initialFormData={initialFormData} />
-                        <FormButtons />
+                        <FormButtons saveButtonLabel='Delete' />
                     </Form>
                 </FormLayout>
             )}
@@ -137,7 +120,7 @@ const Content = () => {
 
 export default function App() {
     return (
-        <SimplePage pageTitle='Update text record'>
+        <SimplePage pageTitle='Delete text record'>
             <Content />
         </SimplePage>
     );

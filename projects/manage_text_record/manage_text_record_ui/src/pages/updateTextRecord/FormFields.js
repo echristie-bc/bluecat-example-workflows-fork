@@ -96,7 +96,10 @@ export const FormFields = ({ initialFormData }) => {
                 })?.id ?? '';
             const payload = new FormData();
             payload.append('configuration', configurationID);
-            doPost('/update_text_record/views', payload).then((data) => {
+            doPost(
+                '/manage_text_record/update_text_record/views',
+                payload,
+            ).then((data) => {
                 setViews(data.views.length === 0 ? [] : data.views);
             });
         } else {
@@ -117,7 +120,10 @@ export const FormFields = ({ initialFormData }) => {
             const payload = new FormData();
             payload.append('view', viewID);
 
-            doPost('/update_text_record/zones', payload).then((data) => {
+            doPost(
+                '/manage_text_record/update_text_record/zones',
+                payload,
+            ).then((data) => {
                 setZones(data.zones.length === 0 ? [] : data.zones);
             });
         } else {
@@ -137,7 +143,7 @@ export const FormFields = ({ initialFormData }) => {
             const payload = new FormData();
             payload.append('zone', zoneID);
 
-            doPost('/update_text_record/records', payload)
+            doPost('/manage_text_record/update_text_record/records', payload)
                 .then((data) => {
                     setRecords(data.records.length === 0 ? [] : data.records);
                     setRecords(data.records.length === 0 ? [] : data.records);

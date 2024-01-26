@@ -27,13 +27,14 @@ module.exports = [
     {
         entry: {
             updateTextRecord: './src/pages/updateTextRecord/index.js',
+            deleteTextRecord: './src/pages/deleteTextRecord/index.js',
         },
         output: {
             path: path.join(
                 __dirname,
-                '../../../workspace/workflows/Manage text record/update_text_record/',
+                '../../../workspace/workflows/manage_text_record/',
             ),
-            publicPath: '/update_text_record/',
+            publicPath: '/manage_text_record/',
             filename: 'js/[name].js',
             assetModuleFilename: 'img/[name][ext]',
         },
@@ -95,6 +96,11 @@ module.exports = [
                 template: path.join(__dirname, 'src', 'index.html'),
                 filename: 'html/updateTextRecord/index.html',
                 chunks: ['updateTextRecord'],
+            }),
+            new HtmlWebpackPlugin({
+                template: path.join(__dirname, 'src', 'index.html'),
+                filename: 'html/deleteTextRecord/index.html',
+                chunks: ['deleteTextRecord'],
             }),
         ],
     },
