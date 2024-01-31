@@ -35,6 +35,7 @@ import {
 } from '@bluecat/limani';
 import { Form, validateNotEmpty } from '@bluecateng/auto-forms';
 import { FormFields } from './FormFields';
+import { LabelLine } from '@bluecateng/pelagos';
 import './App.less';
 
 const Content = () => {
@@ -101,6 +102,10 @@ const Content = () => {
 
     return (
         <>
+            <LabelLine
+                text='This is a workflow to delete an existing text record. It searches for and filters text records. 
+            It is compatible with Gateway 23.2 or newer, BAM 9.5.0 or newer, and uses BAM REST v2 API.'
+            />
             {initialFormData && (
                 <FormLayout>
                     <Form

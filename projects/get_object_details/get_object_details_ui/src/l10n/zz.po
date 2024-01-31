@@ -70,5 +70,5 @@ msgid "Value should not be less than 0."
 msgstr "Vââlùùéé shôôùùld nôôt béé lééss thâân 0."
 
 #: 585d
-msgid "Workflow to get name and type for the given object ID."
-msgstr "Wôôrkflôôw tôô géét nââméé âând typéé fôôr théé gîîvéén ôôbjééççt ÎÎD."
+msgid "This is a workflow to get name and type for the given object ID. It is compatible with Gateway 23.2 or newer, BAM 9.5.0 or newer, and uses BAM REST v2 API."
+msgstr "Thîîs îîs ââ wôôrkflôôw tôô géét nââméé âând typéé fôôr théé gîîvéén ôôbjééççt ÎÎD. ÎÎt îîs ççôômpââtîîbléé wîîth Gââtééwâây 23.2 ôôr nééwéér, BÂÂM 9.5.0 ôôr nééwéér, âând ùùséés BÂÂM RÉÉST v2 ÂÂPÎÎ."

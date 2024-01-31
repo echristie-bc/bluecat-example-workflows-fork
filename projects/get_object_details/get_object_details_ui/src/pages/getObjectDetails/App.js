@@ -102,7 +102,7 @@ const Content = () => {
             <PageContent pageTitle={t`Get object name example`}>
                 <div className='Content'>
                     <LabelLine
-                        text={t`Workflow to get name and type for the given object ID.`}
+                        text={t`This is a workflow to get name and type for the given object ID. It is compatible with Gateway 23.2 or newer, BAM 9.5.0 or newer, and uses BAM REST v2 API.`}
                     />
                     <DetailsGrid className='Content__mainGrid'>
                         <TextInputField
