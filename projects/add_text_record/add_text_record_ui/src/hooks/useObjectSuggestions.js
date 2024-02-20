@@ -24,7 +24,7 @@ import { useCallback, useMemo } from 'react';
 
 export default (values, setError, errorText, disable) => {
     const names = useMemo(
-        () => values.map(({ id, name }) => ({ id, name: name.toLowerCase() })),
+        () => values.map(({ id, name }) => ({ id, name })),
         [values],
     );
     return useCallback(
@@ -33,8 +33,10 @@ export default (values, setError, errorText, disable) => {
                 return [];
             }
 
-            text = text.toLowerCase();
-            const suggestions = names.filter(({ name }) => name.includes(text));
+            const textLower = text.toLowerCase();
+            const suggestions = names.filter(({ name }) =>
+                name.toLowerCase().includes(textLower),
+            );
             if (!suggestions.length) {
                 setError(errorText);
                 return suggestions;
@@ -44,8 +46,8 @@ export default (values, setError, errorText, disable) => {
                 .sort((a, b) => {
                     const an = a.name;
                     const bn = b.name;
-                    const as = an.startsWith(text);
-                    const bs = bn.startsWith(text);
+                    const as = an.toLowerCase().startsWith(textLower);
+                    const bs = bn.toLowerCase().startsWith(textLower);
                     return bs - as || an.localeCompare(bn);
                 })
                 .map(({ id, name }) => ({ id, name }));
