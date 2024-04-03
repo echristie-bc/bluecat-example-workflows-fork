@@ -47,7 +47,7 @@ const Content = () => {
     const rules = {};
     const extraValidation = (
         errors,
-        { configuration, view, zone, recordName, recordText },
+        { configuration, view, zone, record, recordName, recordText },
     ) => ({
         ...errors,
         configuration: validateNotEmpty('Please select a configuration.')(
@@ -55,6 +55,7 @@ const Content = () => {
         ),
         view: validateNotEmpty('Please select a view.')(view?.name),
         zone: validateNotEmpty('Please select a zone.')(zone?.name),
+        record: validateNotEmpty('Please select a record.')(record.name),
         recordName: validateNotEmpty('Record must have a name.')(recordName),
         recordText: validateNotEmpty('Record must have text.')(recordText),
     });
@@ -131,7 +132,7 @@ const Content = () => {
                         initialValues={initialFormData}
                         extraValidation={extraValidation}
                         onSubmit={handleSubmit}
-                        className='UpdateTextRecord'>
+                        className='UpdateTextRecordForm'>
                         <FormFields initialFormData={initialFormData} />
                         <FormButtons saveButtonLabel='Update' />
                     </Form>

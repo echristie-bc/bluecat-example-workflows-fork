@@ -23,19 +23,10 @@ SOFTWARE.
 @import '~@bluecateng/pelagos/less/utils';
 @import '~@bluecateng/pelagos/less/spacing';
 
-.UpdateTextRecord {
-    flex: 1;
-    justify-content: space-between;
-
-    &__fields {
-        flex: 1;
-        flex-basis: 0;
-    }
-}
-
 .UpdateTextRecordForm {
     flex: 1;
     overflow: hidden;
+    justify-content: space-between;
 
     &__body {
         .details-grid(
@@ -45,6 +36,11 @@ SOFTWARE.
             'cf cf .' 'vw vw .' 'ze ze .' 'rs rs .' 'rs rs .' 'sb . .' 'fl fl .' 'rt rt .' 'on on .' 'nt nt .';
             'cf cf . .' 'vw vw . .' 'ze ze . .' 'rs rs . .' 'rs rs . .' 'sb . . .' 'fl fl . .' 'rt rt . .' 'on on . .' 'nt nt . .';
         );
+
+        flex: 1;
+        flex-basis: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     &__configuration {
@@ -73,7 +69,6 @@ SOFTWARE.
 
     &__recordTableLayer {
         grid-area: rt;
-        height: @sp-160;
     }
 
     &__recordTable {

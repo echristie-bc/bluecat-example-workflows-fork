@@ -42,6 +42,7 @@ const FormComboBoxField = ({
     ...props
 }) => {
     const labelId = `${id}-label`;
+    const errorId = `${id}-error`;
     const { value, error, extra, setValue, setError, setExtra } =
         useFormField(name);
     const handleGetSuggestions = useObjectSuggestions(
@@ -79,7 +80,7 @@ const FormComboBoxField = ({
                 onChange={handleChange}
                 onTextChange={handleTextChange}
             />
-            <FieldError text={error} />
+            <FieldError id={errorId} text={error} />
         </div>
     );
 };

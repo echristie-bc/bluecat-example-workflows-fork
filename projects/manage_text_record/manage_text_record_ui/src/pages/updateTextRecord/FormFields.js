@@ -23,12 +23,12 @@ SOFTWARE.
 import { useCallback, useEffect, useState } from 'react';
 import {
     DetailsGrid,
+    FieldError,
     LabelLine,
     Layer,
     Table,
     TableBody,
     TableCell,
-    TableHead,
     TableRow,
     TableScrollWrapper,
     TableToolbar,
@@ -61,8 +61,12 @@ export const FormFields = ({ initialFormData }) => {
         error: selectedZoneError,
         setError: setSelectedZoneError,
     } = useFormField('zone');
-    const { value: selectedRecord, setValue: setSelectedRecord } =
-        useFormField('record');
+    const {
+        value: selectedRecord,
+        setValue: setSelectedRecord,
+        error: selectedRecordError,
+        setError: setSelectedRecordError,
+    } = useFormField('record');
     const { setValue: setSelectedRecordName } = useFormField('recordName');
     const { setValue: setSelectedRecordText } = useFormField('recordText');
 
@@ -181,7 +185,7 @@ export const FormFields = ({ initialFormData }) => {
     useEffect(() => {
         if (selectedRecord) {
             setSelectedRecordName(selectedRecord['name']);
-            setSelectedRecordText(selectedRecord['text']);
+            setSelectedRecordText(selectedRecord['text'] ?? '');
         } else {
             setSelectedRecordName('');
             setSelectedRecordText('');
@@ -192,6 +196,7 @@ export const FormFields = ({ initialFormData }) => {
         (event) => {
             const row = event.target.closest('tr');
             setSelectedRecord(matchRecord(row.dataset.id));
+            setSelectedRecordError(null);
         },
         [selectedRecord],
     );
@@ -265,7 +270,6 @@ export const FormFields = ({ initialFormData }) => {
                             className='UpdateTextRecordForm__table'
                             stickyHeader
                             fixedLayout>
-                            <TableHead label='testLabel'></TableHead>
                             <TableBody onClick={handleRecordClick}>
                                 {Object.entries(filteredRecords).map(
                                     ([, value]) => {
@@ -287,6 +291,7 @@ export const FormFields = ({ initialFormData }) => {
                             </TableBody>
                         </Table>
                     </TableScrollWrapper>
+                    <FieldError id='record-error' text={selectedRecordError} />
                 </TableToolbar>
             </Layer>
 
