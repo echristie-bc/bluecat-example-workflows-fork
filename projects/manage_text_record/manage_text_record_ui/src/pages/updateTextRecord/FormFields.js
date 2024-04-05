@@ -149,7 +149,12 @@ export const FormFields = ({ initialFormData }) => {
 
             doPost('/manage_text_record/update_text_record/records', payload)
                 .then((data) => {
-                    setRecords(data.records.length === 0 ? [] : data.records);
+                    data.records.map(
+                        (rec) =>
+                            (rec.displayName = rec.name
+                                ? rec.name
+                                : 'Same as zone named text record'),
+                    );
                     setRecords(data.records.length === 0 ? [] : data.records);
                 })
                 .finally(() => {
@@ -166,11 +171,15 @@ export const FormFields = ({ initialFormData }) => {
         if (filterText.length !== 0 && records.length !== 0) {
             setSelectedRecord({});
             setFilteredRecords(
-                records.filter((rec) => rec.name.includes(filterText)),
+                records.filter((rec) =>
+                    rec.displayName.toLowerCase().includes(filterText),
+                ),
             );
         } else {
             setFilteredRecords(
-                records.filter((rec) => rec.name.includes(filterText)),
+                records.filter((rec) =>
+                    rec.displayName.toLowerCase().includes(filterText),
+                ),
             );
         }
         setSelectedRecordName('');
@@ -282,7 +291,7 @@ export const FormFields = ({ initialFormData }) => {
                                                     selectedRecord?.id
                                                 }>
                                                 <TableCell>
-                                                    {value.name}
+                                                    {value.displayName}
                                                 </TableCell>
                                             </TableRow>
                                         );
