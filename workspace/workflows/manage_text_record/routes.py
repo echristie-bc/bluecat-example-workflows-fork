@@ -138,16 +138,15 @@ def api_post_update_text_record():
 
     zone_name = request.form["zoneName"]
     record_id = request.form["recordID"]
-    old_name = request.form["oldName"]
     new_name = request.form["newName"]
     new_text = request.form["newText"]
 
     headers = {}
-    if old_name:
-        absolute_name = old_name + "." + zone_name
+    if new_name:
+        absolute_name = new_name + "." + zone_name
     else:
         absolute_name = None
-        headers = {"id": record_id}
+        headers = {"x-bcn-same-as-zone": "true"}
 
     body = {
         "id": record_id,
