@@ -20,6 +20,8 @@
 """Routes and back-end implementation of workflow "update_text_record"."""
 import os
 
+from bluecat.gateway.errors import PublicError  # pylint: disable=import-error
+
 # pylint: disable=import-error
 from bluecat.gateway.decorators import (
     api_exc_handler,
@@ -164,8 +166,7 @@ def api_post_update_text_record():
             json=body,
         )
     except Exception as e:
-        rdata = {"error": str(e)}
-        return {"error": rdata["error"]}
+        raise PublicError(str(e)) from e
 
     return {
         "message": "Record successfully updated",

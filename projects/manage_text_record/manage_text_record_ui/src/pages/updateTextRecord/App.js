@@ -55,7 +55,7 @@ const Content = () => {
         ),
         view: validateNotEmpty('Please select a view.')(view?.name),
         zone: validateNotEmpty('Please select a zone.')(zone?.name),
-        record: validateNotEmpty('Please select a record.')(record.name),
+        record: validateNotEmpty('Please select a record.')(record.displayName),
     });
 
     useEffect(() => {
