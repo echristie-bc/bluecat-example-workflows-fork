@@ -32,7 +32,7 @@ import {
     usePageMessages,
     usePageModalSpinner,
     useTrigger,
-} from '@bluecat/limani';
+} from '@bluecateng/limani';
 import { Form, validateNotEmpty } from '@bluecateng/auto-forms';
 import { FormFields } from './FormFields';
 import { LabelLine } from '@bluecateng/pelagos';

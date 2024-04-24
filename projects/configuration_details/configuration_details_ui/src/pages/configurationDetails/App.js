@@ -34,7 +34,7 @@ import {
     usePageMessages,
     usePageModalSpinner,
     useTrigger,
-} from '@bluecat/limani';
+} from '@bluecateng/limani';
 import {
     Button,
     DetailEntry,

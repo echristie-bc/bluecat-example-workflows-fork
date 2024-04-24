@@ -29,7 +29,7 @@ import {
     usePageError,
     usePageMessages,
     usePageModalSpinner,
-} from '@bluecat/limani';
+} from '@bluecateng/limani';
 import {
     TextInputField,
     Button,

@@ -23,7 +23,7 @@ SOFTWARE.
 import { useCallback, useEffect, useState } from 'react';
 import { FormTextInput } from '@bluecateng/pelagos-forms';
 import { useFormField } from '@bluecateng/auto-forms';
-import { doPost, resetForm } from '@bluecat/limani';
+import { doPost, resetForm } from '@bluecateng/limani';
 import FormComboBoxField from '../../components/FormComboBoxField';
 
 export const FormFields = ({ initialFormData }) => {

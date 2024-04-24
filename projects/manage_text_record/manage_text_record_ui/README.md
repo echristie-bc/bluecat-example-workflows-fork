@@ -121,7 +121,7 @@ instance.
         from limani to have those fonts in their page
 
     ```
-      @import '@bluecat/limani/less/font';
+      @import '@bluecateng/limani/less/font';
     ```
 
 -   Limani comes with a utility function that can be used to reset the pelagos form, when there is a change in the

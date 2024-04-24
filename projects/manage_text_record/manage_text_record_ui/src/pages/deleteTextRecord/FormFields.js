@@ -36,7 +36,7 @@ import {
     TableToolbarSearch,
 } from '@bluecateng/pelagos';
 import { useFormField } from '@bluecateng/auto-forms';
-import { doPost, resetForm } from '@bluecat/limani';
+import { doPost, resetForm } from '@bluecateng/limani';
 import FormComboBoxField from '../../components/FormComboBoxField';
 
 export const FormFields = ({ initialFormData }) => {

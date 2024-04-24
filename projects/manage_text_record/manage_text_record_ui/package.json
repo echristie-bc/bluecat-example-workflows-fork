@@ -14,8 +14,8 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "@bluecat/limani": "^1.1.6-dev",
         "@bluecateng/auto-forms": "^1.0.0",
+        "@bluecateng/limani": "^1.0.0",
         "@bluecateng/pelagos": "^12.4.0",
         "@bluecateng/pelagos-forms": "^5.0.0",
         "@bluecateng/smooth-reorder": "^1.0.1",
