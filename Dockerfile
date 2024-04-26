@@ -18,7 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-FROM quay.io/bluecat/gateway:23.2.2
+FROM quay.io/bluecat/gateway:24.1.0
 
 # Set expiration on Quay
 ARG expires_after="never"
