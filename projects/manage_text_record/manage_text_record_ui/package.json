@@ -15,7 +15,7 @@
     "license": "MIT",
     "dependencies": {
         "@bluecateng/auto-forms": "^1.0.0",
-        "@bluecateng/limani": "github:bluecatengineering/limani#feature/ENG-52668",
+        "@bluecateng/limani": "^1.1.0",
         "@bluecateng/pelagos": "^12.11.0",
         "@bluecateng/pelagos-forms": "^5.0.0",
         "@bluecateng/smooth-reorder": "^1.0.1",
