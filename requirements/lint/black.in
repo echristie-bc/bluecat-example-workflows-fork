@@ -1,5 +1,1 @@
-black==23.3.0
-
-# black dependencies, pin version to avoid error
-typing-extensions==4.0.0
-tomli==2.0.1
+black==24.3.0
